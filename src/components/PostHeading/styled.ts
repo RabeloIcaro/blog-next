@@ -6,8 +6,4 @@ export const Container = styled.h2`
     margin: ${theme.spacings.large};
     text-align: center;
   `}
-
-  a {
-    color: ${({ theme }) => theme.colors.white};
-  }
 `;

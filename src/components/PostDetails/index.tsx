@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Date } from '../Postdate';
 import { Container } from './styled';
 
@@ -10,7 +11,14 @@ export type PostDetailsProps = {
 export const PostDetails = ({ date, author, category }: PostDetailsProps) => {
   return (
     <Container>
-      Publicado em <Date date={date} /> por {author} em {category}
+      Publicado em <Date date={date} /> por {author} em{' '}
+      <Link
+        legacyBehavior
+        as={`/post/page/1/${category}`}
+        href="/post/page/[...param]"
+      >
+        <a>{category}</a>
+      </Link>
     </Container>
   );
 };
